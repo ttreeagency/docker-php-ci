@@ -1,0 +1,40 @@
+2015-09-01 22:18:01,782 CRIT Supervisor running as root (no user in config file)
+2015-09-01 22:18:01,787 INFO supervisord started with pid 1
+2015-09-01 22:18:02,789 INFO spawned: 'nginx' with pid 7
+2015-09-01 22:18:02,789 INFO spawned: 'init' with pid 8
+2015-09-01 22:18:02,791 INFO spawned: 'php5-fpm' with pid 9
+2015-09-01 22:18:02,791 INFO spawned: 'mysql' with pid 10
+2015-09-01 22:18:03,945 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:03,945 INFO success: init entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:03,945 INFO success: php5-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:03,945 INFO success: mysql entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:04,815 INFO exited: init (exit status 0; expected)
+2015-09-01 22:18:13,764 WARN received SIGINT indicating exit request
+2015-09-01 22:18:13,764 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:18:16,768 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:18:19,772 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:18:22,775 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:18:23,777 WARN killing 'mysql' (10) with SIGKILL
+2015-09-01 22:18:23,777 INFO stopped: mysql (terminated by SIGKILL)
+2015-09-01 22:18:23,781 INFO stopped: php5-fpm (exit status 0)
+2015-09-01 22:18:24,786 INFO stopped: nginx (exit status 0)
+2015-09-01 22:18:41,491 CRIT Supervisor running as root (no user in config file)
+2015-09-01 22:18:41,495 INFO supervisord started with pid 1
+2015-09-01 22:18:42,497 INFO spawned: 'nginx' with pid 7
+2015-09-01 22:18:42,498 INFO spawned: 'init' with pid 8
+2015-09-01 22:18:42,499 INFO spawned: 'php5-fpm' with pid 9
+2015-09-01 22:18:42,500 INFO spawned: 'mysql' with pid 10
+2015-09-01 22:18:43,659 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:43,659 INFO success: init entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:43,659 INFO success: php5-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:43,659 INFO success: mysql entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-09-01 22:18:44,524 INFO exited: init (exit status 0; expected)
+2015-09-01 22:32:21,385 WARN received SIGINT indicating exit request
+2015-09-01 22:32:21,385 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:32:24,389 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:32:27,393 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:32:30,396 INFO waiting for nginx, php5-fpm, mysql to die
+2015-09-01 22:32:31,398 WARN killing 'mysql' (10) with SIGKILL
+2015-09-01 22:32:31,398 INFO stopped: mysql (terminated by SIGKILL)
+2015-09-01 22:32:31,402 INFO stopped: php5-fpm (exit status 0)
+2015-09-01 22:32:32,407 INFO stopped: nginx (exit status 0)
