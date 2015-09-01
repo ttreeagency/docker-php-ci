@@ -13,6 +13,7 @@ RUN apt-key add dotdeb.gpg
 RUN apt-get update -y
 RUN apt-get install -y \
 	git-core \
+	curl \
 	nginx \
 	php5-fpm \
 	php5-mysqlnd \
@@ -28,8 +29,8 @@ RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 ADD conf/vhost.conf /etc/nginx/sites-available/default
 ADD conf/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
 
 ADD bin/init.sh /init.sh
 RUN chmod +x /init.sh
