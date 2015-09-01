@@ -12,6 +12,7 @@ RUN apt-key add dotdeb.gpg
 
 RUN apt-get update -y
 RUN apt-get install -y \
+	git-core \
 	nginx \
 	php5-fpm \
 	php5-mysqlnd \
