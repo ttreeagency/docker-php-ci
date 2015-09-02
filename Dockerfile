@@ -18,7 +18,6 @@ RUN apt-get install -y \
 	php5-fpm \
 	php5-mysqlnd \
 	php5-cli \
-	mysql-server \
 	supervisor
 
 RUN sed -e 's/;daemonize = yes/daemonize = no/' -i /etc/php5/fpm/php-fpm.conf
