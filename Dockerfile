@@ -32,9 +32,6 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
 
-ADD bin/init.sh /init.sh
-RUN chmod +x /init.sh
-
 EXPOSE 80 3306
 
 VOLUME ["/data"]
