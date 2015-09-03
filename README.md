@@ -1,6 +1,6 @@
 # ttreeagency/php-ci:latest
 
-Official ttreeagency docker container for PHP application.
+Official ttreeagency docker container for PHP application running on Gitlab CI.
 
 This container contain the following software:
 
@@ -75,11 +75,10 @@ docker run ttreeagency/php-ci:latest app:help
 
 Below is the complete list of available options that can be used to customize your gitlab installation.
 
-- **DEBUG_ENTRYPOINT**: Set this to `true` to enable entrypoint debugging.
-- **SSL_CERTIFICATE_PATH**: Location of the ssl certificate. Defaults to `/data/certs/cert.crt`.
-- **CA_CERTIFICATES_PATH**: List of SSL certificates to trust. Defaults to `/data/certs/ca.crt`.
-- **GITHUB_TOKEN**: Github Oauth token, used by composer.
-- **COMPOSER_UPDATE**: Update composer on container start. Defaults to `true`.
+Check base image for [existing constants](https://github.com/ttreeagency/docker-php/issues)
+
+Bellow the constants specific to this container:
+
 - **BOWER_UPDATE**: Update bower on container start. Defaults to `true`.
 - **GULP_UPDATE**: Update gulp on container start. Defaults to `true`.
 - **GRUNT_UPDATE**: Update grunt on container start. Defaults to `true`.
