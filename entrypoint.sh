@@ -11,6 +11,8 @@ BOWER_UPDATE=${BOWER_UPDATE:-true}
 
 GULP_UPDATE=${GULP_UPDATE:-true}
 
+GRUNT_UPDATE=${GRUNT_UPDATE:-true}
+
 FLOW_CONTEXT=${FLOW_CONTEXT:-Production}
 export $FLOW_CONTEXT
 FLOW_REWRITEURLS=${FLOW_REWRITEURLS:-1}
@@ -33,6 +35,10 @@ appInit () {
   if [ "$GULP_UPDATE" == "true" ]; then
     echo "Update gulp ..."
     npm update -g gulp
+  fi
+  if [ "$GRUNT_UPDATE" == "true" ]; then
+    echo "Update grunt ..."
+    npm update -g grunt-cli
   fi
   if [ ! -z "$GITHUB_TOKEN" ]; then
     echo "Setup Github oauth token ..."
