@@ -1,6 +1,15 @@
 # ttreeagency/php-ci:latest
 
-Official ttreeagency docker container for PHP application. This container is under development, change can happen at any time ...
+Official ttreeagency docker container for PHP application.
+
+This container contain the following software:
+
+- Nginx + PHP CLI/FPM (from Dotdeb respository)
+- Composer, the PHP package manager, automatically updated on container start
+- NPM
+- GIT
+
+This container is under development, change can happen at any time ...
 
 ## Version
 
@@ -44,6 +53,18 @@ docker run -i -t -p "8080:80" -P --name php-ci -v $PWD/data:/data ttreeagency/ph
 ```
 
 Point your browser to: ```http://localhost:8080```, you should see the output of phpinfo().
+
+You can start any binary available in the container::
+
+```bash
+docker run ttreeagency/php-ci:latest php -v
+```
+
+You can available options::
+
+```bash
+docker run ttreeagency/php-ci:latest app:help
+```
 
 ### Available Configuration Parameters
 
