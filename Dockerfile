@@ -41,7 +41,6 @@ RUN apt-get update -y && \
     php5-memcache \
     php5-redis \
     php5-fpm \
-    php5-mysql \
     php5-mysqlnd \
     supervisor
 
