@@ -9,6 +9,7 @@ This container contain the following software:
 - GIT
 - Composer, the PHP package manager, automatically updated on container start
 - Bower, the JS package manager, automatically updated on container start
+- Gulp, the JS automation tools, automatically updated on container start
 
 This container is under development, change can happen at any time ...
 
@@ -77,3 +78,6 @@ Below is the complete list of available options that can be used to customize yo
 - **SSL_CERTIFICATE_PATH**: Location of the ssl certificate. Defaults to `/data/certs/cert.crt`.
 - **CA_CERTIFICATES_PATH**: List of SSL certificates to trust. Defaults to `/data/certs/ca.crt`.
 - **GITHUB_TOKEN**: Github Oauth token, used by composer.
+- **COMPOSER_UPDATE**: Update composer on container start. Defaults to `true`.
+- **BOWER_UPDATE**: Update bower on container start. Defaults to `true`.
+- **GULP_UPDATE**: Update gulp on container start. Defaults to `true`.

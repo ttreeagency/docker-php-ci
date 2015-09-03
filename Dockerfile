@@ -41,7 +41,7 @@ RUN sed -e 's/;daemonize = yes/daemonize = no/' -i /etc/php5/fpm/php-fpm.conf &&
 	sed -e 's/;listen\.owner/listen.owner/' -i /etc/php5/fpm/pool.d/www.conf && \
 	sed -e 's/;listen\.group/listen.group/' -i /etc/php5/fpm/pool.d/www.conf && \
 	echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-  npm install -g bower
+  npm install -g bower gulp
 
 ADD conf/vhost.conf /etc/nginx/sites-available/default
 ADD conf/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
