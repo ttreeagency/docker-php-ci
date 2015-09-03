@@ -17,6 +17,9 @@ CA_CERTIFICATES_PATH=${CA_CERTIFICATES_PATH:-$TTREE_DATA_DIR/certs/ca.crt}
 appInit () {
   echo "Update composer ..."
   composer self-update
+  echo "Update bower ..."
+  npm cache clean
+  npm update -g bower
   if [ ! -z "$GITHUB_TOKEN" ]; then
     echo "Setup Github oauth token ..."
     composer config -g github-oauth.github.com "${GITHUB_TOKEN}"
