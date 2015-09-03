@@ -12,6 +12,8 @@ This container contain the following software:
 - Gulp, the JS automation tools, automatically updated on container start (check Available Configuration Parameters, to disable automatic update)
 - Grunt, the JS automation tools, automatically updated on container start (check Available Configuration Parameters, to disable automatic update)
 
+This container support **Docker in Docker**
+
 This container is under development, change can happen at any time ...
 
 ## Version

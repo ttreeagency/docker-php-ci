@@ -11,7 +11,21 @@ RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
 # Install packages
 RUN apt-get update -y && \
 	apt-get install -y \
-    nodejs && \
-  npm install -g bower gulp grunt-cli
+    nodejs \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    lxc \
+    iptables && \
+      npm install -g bower gulp grunt-cli
 
-CMD ["app:start"]
+# Install Docker from Docker Inc. repositories.
+RUN curl -sSL https://get.docker.com/ubuntu/ | sh
+
+# Install the magic wrapper.
+ADD ./wrapdocker /usr/local/bin/wrapdocker
+RUN chmod +x /usr/local/bin/wrapdocker
+
+VOLUME /var/lib/docker
+
+CMD ["wrapdocker"]
