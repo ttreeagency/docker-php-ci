@@ -21,15 +21,16 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-RUN apt-get install -y wget && \
+RUN apt-get install -y wget curl && \
 	echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list && \
 	echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list && \
-	wget https://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg
+	wget https://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && \
+  curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
 
 RUN apt-get update -y && \
 	apt-get install -y \
 		git-core \
-		curl \
+    nodejs \
 		nginx \
 		php5-fpm \
 		php5-mysqlnd \
