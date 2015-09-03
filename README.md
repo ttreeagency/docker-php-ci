@@ -37,6 +37,14 @@ docker run --name php-ci -d \
     ttreeagency/php-ci:latest
 ```
 
+If you build the container manually, you can test it with::
+
+```bash
+docker run -i -t -p "8080:80" -P --name php-ci -v $PWD/data:/data ttreeagency/php-ci
+```
+
+Point your browser to: ```http://localhost:8080```, you should see the output of phpinfo().
+
 ### Available Configuration Parameters
 
 *Please refer the docker run command options for the `--env-file` flag where you can specify all required environment variables in a single file. This will save you from writing a potentially long docker run command. Alternately you can use docker-compose.*
