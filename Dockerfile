@@ -29,13 +29,21 @@ RUN apt-get install -y wget curl && \
 
 RUN apt-get update -y && \
 	apt-get install -y \
-		git-core \
+    git-core \
     nodejs \
-		nginx \
-		php5-fpm \
-		php5-mysqlnd \
-		php5-cli \
-		supervisor
+    nginx \
+    php5 \
+    php5-cli \
+    php5-curl \
+    php5-xsl \
+    php5-gd \
+    php5-mcrypt \
+    php5-memcache \
+    php5-redis \
+    php5-fpm \
+    php5-mysql \
+    php5-mysqlnd \
+    supervisor
 
 RUN sed -e 's/;daemonize = yes/daemonize = no/' -i /etc/php5/fpm/php-fpm.conf && \
 	sed -e 's/;listen\.owner/listen.owner/' -i /etc/php5/fpm/pool.d/www.conf && \
