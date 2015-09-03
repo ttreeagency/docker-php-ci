@@ -1,5 +1,10 @@
 FROM debian:jessie
 
+ENV TTREE_VERSION=1.0.0 \
+    TTREE_DATA_DIR="/data" \
+    FLOW_CONTEXT=Production \
+    FLOW_REWRITEURLS=1
+
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y
@@ -39,11 +44,15 @@ RUN sed -e 's/;daemonize = yes/daemonize = no/' -i /etc/php5/fpm/php-fpm.conf &&
 ADD conf/vhost.conf /etc/nginx/sites-available/default
 ADD conf/supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 
+COPY entrypoint.sh /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh
+
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
-EXPOSE 80 3306
+EXPOSE 80/tcp
 
-VOLUME ["/data"]
-WORKDIR /data
+VOLUME ["${TTREE_DATA_DIR}"]
+WORKDIR ${TTREE_DATA_DIR}
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisor.conf"]
+ENTRYPOINT ["/sbin/entrypoint.sh"]
+CMD ["app:start"]
