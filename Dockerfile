@@ -16,8 +16,11 @@ RUN apt-get update -y && \
     ca-certificates \
     curl \
     lxc \
+    ruby-full \
+    rubygems1.8 \
     iptables && \
-      npm install -g bower gulp grunt-cli
+      npm install -g bower gulp grunt-cli && \
+      gem install sass && gem install compass
 
 # Install Docker from Docker Inc. repositories.
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
