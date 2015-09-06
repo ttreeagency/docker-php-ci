@@ -17,7 +17,6 @@ RUN apt-get update -y && \
     curl \
     lxc \
     ruby-full \
-    rubygems1.8 \
     iptables && \
       npm install -g bower gulp grunt-cli && \
       gem install sass && gem install compass
